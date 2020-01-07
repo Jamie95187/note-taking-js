@@ -1,11 +1,16 @@
-(function(exports){
-  function NoteModel(text){
-    this.text = text;
+'use strict'
+
+function NoteModel(text){
+  this.text = text;
+};
+
+NoteModel.prototype = (function(){
+  function display(){
+    return this.text;
   };
 
-  NoteModel.prototype.display = function(){
-    return this.text;
-  }
+  return {
+    display: display
+  };
 
-  exports.NoteModel = NoteModel;
-})(this);
+})();

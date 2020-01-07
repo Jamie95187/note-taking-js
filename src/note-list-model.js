@@ -1,16 +1,21 @@
-(function(exports){
-  function NoteModelList(){
-    this.list = [];
-  };
+'use strict'
 
-  NoteModelList.prototype.add = function(note){
+function NoteModelList(){
+  this.list = [];
+};
+
+NoteModelList.prototype = (function() {
+  function add (note){
     return this.list.push(note);
-  };
+  }
 
-  NoteModelList.prototype.showList = function(){
+  function showList(){
     return this.list;
+  }
+
+  return {
+    add: add,
+    showList: showList
   };
 
-  exports.NoteModelList = NoteModelList;
-
-})(this);
+})();
