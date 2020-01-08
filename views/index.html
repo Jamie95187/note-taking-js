@@ -2,21 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
 
-    <!-- source files -->
+    <title></title>
+  </head>
+  <body>
+    <div id='app'>
+      Hello
+    </div>
+
     <script src="../src/note-model.js"></script>
     <script src="../src/note-list-model.js"></script>
     <script src="../src/note-list-view.js"></script>
 
-    <!-- tests files -->
-    <script src="../tests/assert.js"></script>
-    <script src="../tests/note-model-tests.js"></script>
-    <script src="../tests/note-list-model-tests.js"></script>
-    <script src="../tests/note-list-views-tests.js"></script>
-
-  </head>
-  <body>
-
+    <script src='../src/note-controller.js'></script>
+    <script>var noteController = new NoteController(new NoteList);
+      noteController.listToApp(document.getElementById('app'))
+    </script>
   </body>
 </html>

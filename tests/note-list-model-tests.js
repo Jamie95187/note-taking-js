@@ -1,8 +1,7 @@
 function testNoteModelListToDisplayList(){
-  var noteModelList = new NoteModelList();
-  var noteModel = new NoteModel("Test");
-  noteModelList.add(noteModel);
-  assert.isTrue(noteModelList.showList()[0] == noteModel)
+  var noteModelList = new NoteList();
+  noteModelList.add("Test");
+  assert.isTrue(noteModelList.showList()[0].display() === "Test")
 };
 
 testNoteModelListToDisplayList();
