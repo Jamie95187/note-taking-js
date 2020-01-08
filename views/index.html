@@ -8,15 +8,18 @@
   <body>
     <div id='app'>
       Hello
+      <div id='note_summary'></div>
+      <div id='full_note'></div>
     </div>
 
     <script src="../src/note-model.js"></script>
     <script src="../src/note-list-model.js"></script>
     <script src="../src/note-list-view.js"></script>
-
+    <script src="../src/single-note-view.js"></script>
     <script src='../src/note-controller.js'></script>
     <script>var noteController = new NoteController(new NoteList);
-      noteController.listToApp(document.getElementById('app'))
+      noteController.listToApp(document.getElementById('note_summary'))
     </script>
+
   </body>
 </html>

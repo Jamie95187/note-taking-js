@@ -1,23 +1,22 @@
 function testCanDisplayListOntoPage(){
 
   var element = {innerHTML: "unchanged"}
-  function NoteListDouble(){};
-
-
-  NoteListDouble.prototype = {
+  var NoteListDouble = {
     add: function(){
 
     },
     showList: function(){
-      return [new NoteModel("Test1"), new NoteModel("Test2")]
-    }
+      return [new NoteModel("Food", "Prawns"), new NoteModel("Beverage", "Tea")]
+    },
   };
 
-  var notecontroller = new NoteController(NoteListDouble);
-  
-  noteController.listToApp(element);
+  var noteController = new NoteController(NoteListDouble);
 
-  assert.isTrue(element.innerHTML == "<ul><li><div>Test1</div></li><li><div>Test2</div></li></ul>")
+  noteController.listToApp();
+
+  var noteListOnPage = document.getElementById('note_summary');
+  console.log(noteListOnPage)
+  assert.isTrue(noteListOnPage.innerHTML == "<ul><li><div>Food: Prawns</div></li><li><div>Beverage: Tea</div></li></ul>")
 }
 
 testCanDisplayListOntoPage();

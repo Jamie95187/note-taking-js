@@ -1,12 +1,12 @@
 'use strict'
 
-function NoteList(){
+function NoteList() {
   this.list = [];
 };
 
 NoteList.prototype = (function() {
-  function add(note){
-    let noteObj = new NoteModel(note);
+  function add(title, body){
+    let noteObj = new NoteModel(title, body);
     return this.list.push(noteObj);
   }
 

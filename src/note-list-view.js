@@ -5,9 +5,9 @@ function NoteListView(noteList){
 };
 
 NoteListView.prototype = (function() {
-  function htmlString (){
+  function htmlString(){
     let array = this.noteList.showList().map((note) => note.display())
-    return "<ul><li><div>" + array.join("</div></li><li><div>") + "</div></li></ul>"
+    return `<ul><li><div><a id=''>` + array.join(`</a></div></li><li><div><a>`) + `</a></div></li></ul>`
   };
 
   return {

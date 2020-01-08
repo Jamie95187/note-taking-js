@@ -1,6 +1,6 @@
 function testNoteListViewToDisplayListAsHtml(){
   var noteModelList = new NoteList();
-  noteModelList.add("Favourite food: steak");
+  noteModelList.add("Favourite food", "steak");
 
   var noteListView = new NoteListView(noteModelList);
 

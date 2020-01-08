@@ -1,7 +1,7 @@
 function testNoteModelListToDisplayList(){
   var noteModelList = new NoteList();
-  noteModelList.add("Test");
-  assert.isTrue(noteModelList.showList()[0].display() === "Test")
+  noteModelList.add("Food", "Prawns");
+  assert.isTrue(noteModelList.showList()[0].display() === "Food: Prawns")
 };
 
 testNoteModelListToDisplayList();
